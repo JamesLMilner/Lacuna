@@ -1,0 +1,44 @@
+
+IMPORTANT
+[X] ID Addition
+[X] Get Attributes
+[X] Attribute flashing
+[X] Fix pointer sometimes not moving
+[ ] REFACTOR CODE / OPTIMIZE
+[X] Multi Select
+[X] Point Distance Measurement
+[X] Object Distance Measurement
+[X] Area Measurement (Multi)
+[X] Vertex Editing button not working (sometimes doesn't work on click for some reason)
+[X] Change colours of layers (should be easy to implement ???)
+[X] Vertex selection and editing
+[ ] Edge selection and editing (moving two vertices simultaneously?)
+[X] Multiselect is broken (moved it further up the include list)
+
+MEDIUM
+[ ] Split measurement.js into measurement.js and click.js
+[x] Create TIN from height points
+[ ] Attribute <div> expansion
+[ ] Base mesh button 
+
+EXTRAS
+[ ] Grid helper button
+[ ] Highlighted Look At
+[ ] Axis length
+[ ] Axis position
+[ ] 3D Box Select
+[ ] Undo/Redo buttons?
+
+THINGS THAT NEED FIXING
+[X] HELPER TOGGLE WILL TURN OFF ALL FUNCTIONALITY (SELECTION ETC);
+[X] Intersection slightly off from mouse position -- Fixed by changing camera far frustum to a larger value (30000) and aspect ratio to 90
+[X] Fix Multi select for lines
+[X] Fix node importation (why is it broke??) 
+[X] Fix node multiple selection
+[ ] Selection sometimes doesn't change geometry colour to white (might have something to do with document loading as this bug appears to happen if selection happens immediately?)
+[X] Vegetation broken? (Was broken due to the if statements running it as a LIMIT 200 instead of LIMIT 5, although interestingly discovered you can change the max MB of PHP data transfer)
+[ ] Camera messes up at large distances and doesn't let you zoom back in fully (Will have to try to recreate this bug...)
+[X] Helper still appears on invisible objects (Fixed by making sure intersection only occurs on visible items)
+[X] Selection still works on invisible items (Should be fixed as selection is based on valid intersections (DOUBLE CHECK THIS!))
+[ ] Helper appearing in middle instead of on top of object
+[ ] Hole Triangulation (ST_Dump might be a fix?)

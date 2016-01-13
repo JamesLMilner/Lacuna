@@ -1,0 +1,52 @@
+			var projector = new THREE.Projector();
+			lastPoint = null;
+			document.addEventListener( 'mousedown', startDraw, false );
+            document.addEventListener( 'mouseup', stopDraw, false );  
+			
+			
+						function get3dPointZAxis(event) {
+					cX = event.clientX - $( "#info" ).width();
+					cY = event.clientY - $( "#topbar").height() ;
+	
+						var vector = new THREE.Vector3(
+									 ( cX / canvaswidth  ) * 2 - 1,
+										-( cY / canvasheight ) * 2 + 1,
+										0.5 );
+						projector.unprojectVector( vector, camera );
+						var dir = vector.sub( camera.position ).normalize();
+						var distance = - camera.position.z / dir.z;
+						var pos = camera.position.clone().add( dir.multiplyScalar( distance ) );   
+						console.log(pos);
+						return pos;
+					}
+					
+			 function startDraw(event)
+						{
+							lastPoint = get3dPointZAxis(event);    
+						}
+
+            function stopDraw(event)
+            {
+                 if( lastPoint )
+                {
+                    var pos = get3dPointZAxis(event);
+                    var material = new THREE.LineBasicMaterial({
+                        color: 0x0000ff
+                    });
+                    var geometry = new THREE.Geometry();
+                    if( Math.abs(lastPoint.x - pos.x) < 2000 && Math.abs(lastPoint.y - pos.y) < 2000 && Math.abs(lastPoint.z - pos.z) < 2000 )
+                    {
+                        geometry.vertices.push(lastPoint);
+                        geometry.vertices.push(pos);
+                                        
+                        var line = new THREE.Line(geometry, material);
+                        scene.add(line);
+                        lastPoint = pos;        
+                    }
+                    else
+                    {
+                        console.debug(lastPoint.x.toString() + ':' + lastPoint.y.toString() + ':' + lastPoint.z.toString()  + ':' + 
+                                    pos.x.toString() + ':' + pos.y.toString()  + ':' + pos.z.toString());
+                    }
+                }
+            } 

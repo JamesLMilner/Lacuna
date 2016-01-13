@@ -1,0 +1,4 @@
+ALTER TABLE "Bridges" ADD COLUMN "ID" BIGSERIAL PRIMARY KEY;
+
+select * into newtable from oldtable
+

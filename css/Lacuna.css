@@ -1,0 +1,183 @@
+/* Disable Selection */
+
+
+html { width:100%; height: 100% }
+body {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	background-color: #080808;
+	font-size: 16px;
+	font-family: 'Roboto', sans-serif;
+	color: #ffffff;
+}
+
+input[type="checkbox"] {
+    cursor: pointer !important;
+}
+
+html.wait, html.wait * { cursor: wait !important; }
+
+#bottombar { background-color: #181818; }
+
+
+.ui-resizable-handle.ui-resizable-s{position: absolute; bottom: 0px; background: black; height:3px} /** Hide the jQuery UI pulldown icon **/
+.ui-resizable-handle.ui-resizable-se{visibility: hidden;}
+.ui-tooltip
+{
+    font-size:10pt;
+    font-family:Calibri;
+	padding: 1px;
+	margin: 1px;
+}
+
+#loadselected { font-family: 'Roboto', sans-serif; display: inline-block; text-indent: 0px; margin-left: 25px; text-align: center; font-size: inherit !important;} /* The font size CSS changes the button to smaller */
+
+p.titles { font-size: 16px; font-weight: bold; width: 120px; display: inline-block; }
+
+#stats { position: absolute; top:0; right:0; } 
+
+#topbar { width:100%; height:47px; position: fixed; top: 0px; z-index: 10;} /* zindex needed for buttons */
+#logoholder { min-width: 25%; height: 100%; display: inline-block; position: absolute; }
+#buttons { display: inline-block; float: right; height: 100%; width: 75%;  position: relative;}
+#logo { position: absolute; width: 100%; height:100%; background: black; max-width: 269px; max-height: 45px; padding-left: 10px;  }
+#main { width: 100%; position: fixed; top: 47px; bottom: 25px; max-height:100%; } 
+#info { position: absolute; max-width: 100%; width: 25%; height: 100%; display: inline-block; background: #424242; max-height: 100%; margin: 0px; padding: 0px} /* The two divs in main must be inline-block with info being relative */
+#container { position: absolute; left: 25%; width: 75%; height: 100%; background: #424242; overflow: hidden; margin: 0px; padding: 0px;} /* and container being absolute */
+
+#layerscontainer { height: 50%; width: 100%; max-width: 100%; min-width: 100%; 
+		min-height: 20%; max-height: 80%; overflow: hidden; background: #1B2024;}
+		
+#layers { position: absolute; height: 100%; width: 100%; max-width: 100%; min-width: 100%; 
+		min-height: 20%; overflow: hidden; background: #0F1010; 
+		font-size: 16px; text-indent: 15px;
+		} /* For scroll to work, must be positioned! (absolute works) */
+
+.layertext { cursor: help; }
+		
+#attributes {position: absolute; height: 50%; width: 100%;  max-width: 100%; min-width: 100%; overflow-y: auto; overflow-x: auto; 
+		min-height: 20%; max-height: 80%; overflow: hidden; background: #0D090B;
+		font-size: 12px; text-indent: 15px;}	
+		
+.allattributes { line-height: 0.5em !important; }
+
+#attributestop { padding-bottom: 15px; }
+
+.selected { background: #FFCC00 ; color: black; }
+
+.attributetables { border: 1px; border-style: solid; text-align: center; vertical-align: middle; text-indent: 0px; margin-left: 15px; cursor: pointer;
+-webkit-touch-callout: all !important;
+-webkit-user-select: all !important;
+-khtml-user-select: all !important;
+-moz-user-select: all !important;
+-ms-user-select: all !important;
+user-select: all !important;
+	 }
+	
+th { background: black !important;
+color: white !important;
+border-width: 1px;
+padding-right: 15px;
+padding-left: 15px; }
+
+td {padding-right: 15px;
+padding-left: 15px;
+border-color: black;
+border-width: 1px;
+}
+
+tr { background-color: rgb(36, 36, 36); border-color: black;border-width: 1px; }
+
+ 
+#bottombar { width: 100%; height: 25px; position: fixed; bottom: 0px  }
+
+#camera, #helper, #axis, #wireframe, #select, #measure, #objectedit, #canvas, #buffer, #vertexedit { width: 47px; height: 100%; cursor: pointer; float:left; padding-left: 3px;} /* float instead of inline block, as inlineblock adds random 1px border */
+#cameraoptions, #helperoptions, #selectoptions, #measureoptions, #objecteditoptions, #bufferoptions,  #axisoptions {width: 47px; height: 94px; background: rgba(102, 102, 102, 0.60); position: absolute; top: 47px; padding: 0px; 
+												border: 1px black; border-style: solid; display:none;} /* display none required to hide on load */
+#canvasoptions, #wireframeoptions, #vertexeditoptions{width: 47px; height: 47px; background: rgba(102, 102, 102, 0.60); position: absolute; top: 47px; padding: 0px; 
+											border: 1px black; border-style: solid; display:none;}
+#bufferoptions, #axisoptions { height: 142px }
+#objecteditoptions { height: 235px }
+
+#axistoggle { line-height: 3 }
+
+#mode { 
+	position: absolute; right: 0; top: 0; width: 120px ; height: 47px ; line-height: 47px; text-align: center; cursor: pointer;
+}
+									
+/* Increment dropdown menu positions in px accordingly! */
+.topbarbuttons { float: left; display: inline-block; }
+
+/* Helper button css */
+#lookat, #camerasettings , #helpertoggle, #helpercolour, #singleselect, #multiselect, #clickdistance, #area, #vertex {width: 100%; height: 50%; cursor: pointer; text-align: center; line-height: 47px;}
+#delete, #copy, #translate, #rotate, #scale { width: 100%; height: 20%; cursor: pointer; text-align: center;}
+#sphere, #cylinder, #box, #axistoggle, #axissize, #axispos { width: 100%; height: 33.3333333%; cursor: pointer; text-align: center;}
+#helpercolour { background: #FF0000; }
+#canvascolour, #wireframetoggle { width: 100%; height: 100%; cursor: pointer; text-align: center; line-height: 47px; }
+#canvascolour { background: #262626; }
+.colourpicker { background: black;  border: none; padding: 0px; margin: 0px;}
+
+#select-marquee {
+  position:absolute;
+  /* initialize it offscreen */
+  top: -2px;
+  left: -2px;
+  z-index: 50;
+  height: 0px;
+  width: 10px;
+  background-color: rgba(197, 204, 212, 0.5);
+  border: dotted 1px #9a9a9a;
+  margin: 0;
+  padding: 0;
+  pointer-events:none;
+}
+
+/*progrees bar (maybe make jQuery? */						
+progress[value]::-webkit-progress-bar {
+  background-color: grey;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+
+#coords {
+color: red;
+float:right;
+display: inline-block;
+}
+
+#system {
+ display: inline-block;
+ margin-left: 10px;
+}
+
+#xcoord, #ycoord, #zcoord{
+	color: white;
+	display: inline-block;
+	font-size: 11px;
+}
+
+/* Dialog popup box styling */
+.ui-dialog, .ui-dialog-content, .ui-widget-content, #dialog, #dialogtext {
+	background-color: #080808 !important;
+	background: #080808 !important;
+	color: white !important;
+	font-size: 12px !important;
+	}
+.ui-dialog, .ui-dialog-content {
+	width: initial !important }
+	
+@media screen and (max-width: 1000px) {
+    body, #layers { font-size: 12px; !important;  }
+    #logo{ display: none; }
+    #system { display: none !important; }
+    #mode { display: none !important; }
+    #stats { position: absolute !important; bottom:0 !important; right:0 !important; }
+    
+}
+	
